@@ -1,0 +1,33 @@
+<p>
+    <a routerLink="/new">Add a Lead</a>
+</p>
+  <hr>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Notes</th>
+        <th>Status</th>
+        <th>Links</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let general_portfolio_plan of general_portfolio_plans">
+        <td>{{ general_portfolio_plan.name }}</td>
+        <td>{{ general_portfolio_plan.description }}</td>
+        <td>{{ general_portfolio_plan.notes }}</td>
+        <td>{{ general_portfolio_plan.status }}</td>
+        <td>{{ general_portfolio_plan.links }}</td>
+        <td>
+          <button (click)="editGeneral_Portfolio_Plan(general_portfolio_plan._id)">
+            Edit
+          </button>
+          <button (click)="deleteGeneral_Portfolio_Plan(general_portfolio_plan._id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
